@@ -1,0 +1,147 @@
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+
+:root {
+  --size: 18;
+  --base-font-size: 12px;
+  --fluid-typography-ratio: 0.9;
+}
+
+.calendar {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  width: calc(var(--size) * 1vw);
+  min-width: 250px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 9px #727272;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.calendar.open {
+  display: block;
+}
+
+.calendar-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #44c379;
+  padding: 5% 3%;
+}
+
+.calendar-nav p {
+  color: #fff;
+  font-size: calc(
+    var(--base-font-size) + var(--fluid-typography-ratio) * 0.7vw
+  );
+}
+
+.calendar-nav .caleendar-year {
+  font-size: calc(
+    var(--base-font-size) + var(--fluid-typography-ratio) * 0.4vw
+  );
+}
+
+.calendar .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.calendar .btn.prev {
+  left: 5%;
+}
+
+.calendar .btn.next {
+  right: 5%;
+}
+
+.calendar .btn::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: calc(
+    var(--base-font-size) + var(--fluid-typography-ratio) * 0.5vw
+  );
+  color: #fff;
+  content: '\f0d9';
+}
+
+.calendar .btn.next::after {
+  content: '\f0da';
+}
+
+.calendar-grid {
+  padding: 3%;
+}
+
+.calendar-grid .day,
+.calendar-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-grid .day div,
+.calendar-grid .grid button {
+  position: relative;
+  z-index: 1;
+  padding: 30% 0;
+  font-size: calc(
+    var(--base-font-size) + var(--fluid-typography-ratio) * 0.2vw
+  );
+}
+
+.calendar-grid .grid button.color-gray,
+.calendar-grid .day div {
+  color: #979696;
+}
+
+.calendar-grid .grid button.active,
+.calendar-grid .grid button.color-gray.active {
+  color: #fff;
+}
+
+.calendar-grid .grid button.active::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  padding-top: 80%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background-color: #44c379;
+  z-index: -1;
+}
+
+.calendar-grid .grid button.on::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  padding-top: 80%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  border: 1px solid #44c379;
+  z-index: -1;
+}
+
+.box {
+  position: relative;
+  display: block;
+}
+
+.date-input {
+  margin: 10px;
+  padding: 10px 15px;
+  border: 1px solid #727272;
+}

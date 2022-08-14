@@ -1,0 +1,42 @@
+@import url('./date-picker/theme.css');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+body {
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+.container {
+  text-align: center;
+}
+
+.title {
+  color: #db5b33;
+  font-weight: 300;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  width: 200px;
+}
+.box {
+  display: inline-block;
+}
